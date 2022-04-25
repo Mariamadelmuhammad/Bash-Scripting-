@@ -1,0 +1,149 @@
+Mariam 	Adel Muhammad
+python g2
+1-->
+echo "enter you charater"
+read x
+case $x in 
+
+[[:lower:]]) echo "lower"
+;;
+
+[[:upper:]] echo "upper"
+;;
+[0-9]) echo "number"
+;;
+*)echo "nothing"
+esac
+
+mycase .sh
+enter you character
+1
+number 
+2-->
+
+echo "enter you character"
+read x
+case $x in 
+
+[[:lower:]]) echo "lower"
+;;
+[[:upper:]]) echo "upper"
+;;
+[[:lower:]][[:upper:]][0-9]) echo "mix" 
+;;
+*)echo "nothing"
+esac
+
+enter you character
+hskkA1
+mix
+3-->
+for file in *;
+do 
+chmod +x $file;
+done;
+4-->
+#!/bin/bash
+for file in *
+cp $file /home/mariam
+done;
+5-->
+mylist ='cut -f1 -d: /etc/passwd'
+for p in $mylist
+do
+mailx $p <mtemp
+echo mail to $p is sent 
+done 
+~
+~
+6-->
+#!/bin/bash
+watch -n 10 /var/mail/mariam
+
+7-->n1 =1
+
+8-->
+select c in "press 1 for ls " "p
+do
+case $REPLY in 
+1) ls
+;;
+2)ls -a
+;;
+3)exit 
+;;
+*)
+echo sorry
+esac
+done
+9-->
+#!/bin/bash
+
+echo "enter the number of x "
+read x
+echo "enter the x"
+i=0
+
+while [$i -lt $x]
+do
+read a[$i]
+
+i='expr $i+1'
+done
+
+echo " output: "
+i=0
+while [ $i - lt $ele]
+do 
+echo ${a[$i]}
+i= 'expr $i + 1'
+done
+
+
+10-->
+echo "enter size of array"
+read x
+
+echo "enter element "
+i=0
+while [$i -lt $x ]
+do
+read a[$i]
+
+i='expr $i+1'
+done
+echo "avg: "
+while [$i -lt $x]
+
+do 
+t=0
+s=0
+for l in "${a[@]}"
+do
+
+((s+=$l))
+
+((t++))
+done
+
+echo '$s / $t | bc -l '
+done
+
+
+enter size of array
+3
+enter element
+1
+2
+3
+avg
+
+11-->
+square(){
+
+return $(($1*s1))
+
+}
+square 3
+echo $?
+

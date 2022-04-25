@@ -1,0 +1,136 @@
+Mariam Adel Muhammad 
+python G2 lab 2
+
+1-->
+touch prompt.sh
+vi prompt.sh
+#! /bin/bash
+echo "enter your name"
+read name
+echo "welcome $name"
+PATH=$PATH:/home/mariam/Desktop/prompt.sh
+echo $PATH:/home/mariam/Desktop/prompt.sh
+chmod +rwx /home/mariam/Desktop/prompt.sh
+./prompt.sh
+enter your name
+mariam 
+welcome mariam
+
+******************************************************************************************
+2-->vi s1.sh
+#! /bin/bash
+x=5
+echo $x
+export $x
+~             
+mariam@ubuntu:~/Desktop$ ./s2.sh
+5
+
+
+*********************************************************************************************
+3-->touch mycp.sh
+ PATH=$PATH:/home/mariam/Desktop/mycp.sh
+chmod +rwx mycp.sh
+touch file123 file456
+mkdir dir1
+vi file123
+hello mariam
+ vi mycp.sh
+#! /bin/bash
+cp file123 file456
+cp file123 file456 dir1
+./mycp.sh
+cat file456
+hello mariam
+ls dir1
+file123 file456
+************************************************************************************
+4-->
+vi mycd.sh
+#! /bin/bash
+if [ -z $1 ]
+then cd /home/mariam
+else cd $1
+fi
+mariam@ubuntu:~/Desktop$ source ./mycd.sh 
+mariam@ubuntu:~$ cd /home/mariam/Desktop
+mariam@ubuntu:~/Desktop$ source ./mycd.sh /etc
+mariam@ubuntu:/etc$ 
+
+************************************************************************************
+5-->
+touch myls.sh
+chmod +rwx myls.sh
+vi myls.sh
+#! /bin/bash
+if [ -z $1 ]
+then ls $PWD
+else ls $1
+fi
+./myls.sh
+./myls.sh /etc
+*******************************************************************************
+6-->
+vi myls.sh
+#! /bin/bash
+read var
+if [ "$var" == "-l" ]
+then echo "list in long format"
+elif [ "$var" == "-a" ]
+then echo "list all enteries including hidden files"
+elif [ "$var" == "-d" ]
+then echo "if an argument is directory list only its name"
+elif [ "$var" == "-i" ]
+then echo "print inode number"
+elif [ "$var" == "-r" ]
+then echo "recurcively list subdirectories"
+fi
+
+mariam@ubuntu:~/Desktop$ ./myls.sh 
+-l
+list in long format
+**********************************************************************************
+7-->
+#! /bin/bash
+
+if [ -f  $1 ]
+then echo "file"
+fi
+if [ -d  $1 ]
+then echo "directory"
+fi
+if [ -r  $1 ]
+then echo "read"
+fi
+if [ -w  $1 ]
+then echo "write"
+fi
+if [ -x  $1 ]
+then echo "execute"
+fi
+
+./mytest.sh /etc
+directory
+read
+execute
+**********************************************************************************
+8-->
+vi myifo.sh
+
+#! /bin/bash
+echo "enter logname"
+read name
+echo "welcome $name"
+ls -R /home/$name
+cp -r /home/$name /tmp
+ps -u $name
+**********************************************************************************
+
+
+
+
+
+
+
+
+
